@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_appsalud/components/course_card.dart';
+import 'package:frontend_appsalud/components/tag.dart';
 import 'configs/colors.dart';
 
 void main() {
@@ -30,42 +32,113 @@ class MainApp extends StatelessWidget {
                   style: _textTheme,
                   textAlign: TextAlign.start, // Added textAlign property
                 ),
-                Card(
-                  color: AppColors.primaryColor,
-                  shadowColor: AppColors.secondaryColor,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        'https://www.ulima.edu.pe/sites/default/files/faculty/image/industrial_2_copy.jpg',
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '600054',
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
-                            ),
-                            Text(
-                              'Programación Móvil - 872',
-                              style: _textStyle,
-                            ),
-                            Text(
-                              'Activo',
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.green),
-                            ),
-                            Container(
-                              height: 2.0,
-                              color: Colors.black,
-                              margin: EdgeInsets.symmetric(vertical: 5.0),
-                            )
-                          ],
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 7),
+                  child: Card(
+                    color: AppColors.primaryColor,
+                    shadowColor: AppColors.secondaryColor,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.network(
+                          'https://www.ulima.edu.pe/sites/default/files/faculty/image/industrial_2_copy.jpg',
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '600054',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                'Programación Móvil - 872',
+                                style: _textStyle,
+                              ),
+                              Row(
+                                children: [
+                                  Text('Activo'),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Tag(
+                                    text: 'Infraestructura',
+                                    textColor: Colors.black,
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 2.0,
+                                color: Colors.black,
+                                margin: EdgeInsets.symmetric(vertical: 5.0),
+                              ),
+                              Text(
+                                'Pepe Valdivia',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 7),
+                  child: Card(
+                    color: AppColors.primaryColor,
+                    shadowColor: AppColors.secondaryColor,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.network(
+                          'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg',
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '600054',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                'Ingeniería de Datos - 621',
+                                style: _textStyle,
+                              ),
+                              Row(
+                                children: [
+                                  Text('Activo'),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Tag(
+                                    text: 'Ingenieria de Software',
+                                    textColor: Colors.black,
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 2.0,
+                                color: Colors.black,
+                                margin: EdgeInsets.symmetric(vertical: 5.0),
+                              ),
+                              Text(
+                                'Pepe Valdivia',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 7),
+                  child: CourseCard(imageUrl: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg', code: '12345', courseTitle: 'Prueba1', status: 'Activo', profe: 'Estefi')
                 ),
               ],
             ),

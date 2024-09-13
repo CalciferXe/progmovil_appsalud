@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_appsalud/components/course_card.dart';
-import 'package:frontend_appsalud/components/tag.dart';
 import 'package:frontend_appsalud/pages/home/home_page.dart';
-import 'configs/colors.dart';
 
 void main() {
   runApp(const MainApp());

@@ -1,40 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_appsalud/components/course_card.dart';
-import 'package:frontend_appsalud/components/tag.dart';
-import 'package:frontend_appsalud/pages/home/home_page.dart';
-import 'configs/colors.dart';
+import 'package:get/get.dart';
+import '../../components/course_card.dart';
+import '../../components/tag.dart';
+import '../../configs/colors.dart';
+import 'home_controller.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+class HomePage extends StatelessWidget {
+  HomeController control = Get.put(HomeController());
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  Widget _buildBody(BuildContext context) {
+    return SafeArea(
+      child: Text('Template Page'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('App ULIMA'),
-        ),
-        body: HomePage() 
-      ),
-    );
-  }
-}
-
-// Defined constants for TextStyle
-final _textTheme = TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
-final _textStyle = TextStyle(fontWeight: FontWeight.w500);
-
-/*
-SingleChildScrollView(
+    control.listarSecciones();
+    return SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(15),
             child: Column(
@@ -150,10 +133,14 @@ SingleChildScrollView(
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 7),
-                  child: CourseCard(imageUrl: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg', code: '12345', courseTitle: 'Prueba1', status: 'Activo', profe: 'Estefi')
+                  child: CourseCard(imageUrl: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/psicologia_copy.jpg', code: '12345', courseTitle: 'Prueba1', status: 'Activo', profe: 'Estefi',tagColor: Colors.black,)
                 ),
               ],
             ),
           ),
-        ),
-*/
+        );
+  }
+}
+
+final _textTheme = TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
+final _textStyle = TextStyle(fontWeight: FontWeight.w500);

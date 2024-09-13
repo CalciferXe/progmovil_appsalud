@@ -26,7 +26,7 @@ class CourseCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 7),
       child: Card(
-        color: AppColors.backgroundColor,
+        color: AppColors.primaryColor,
         shadowColor: AppColors.secondaryColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +65,7 @@ class CourseCard extends StatelessWidget {
                   ),
                   Container(
                     height: 2.0,
-                    color: Colors.grey,
+                    color: Colors.black,
                     margin: EdgeInsets.symmetric(vertical: 5.0),
                   ),
                   Text(profe),
